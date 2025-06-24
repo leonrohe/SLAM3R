@@ -10,10 +10,10 @@ import torch
 import matplotlib.pyplot as plt
 plt.ion()
 
-from slam3r.datasets.wild_seq import Seq_Data
-from slam3r.models import Image2PointsModel, Local2WorldModel, inf
-from slam3r.utils.device import to_numpy
-from slam3r.utils.recon_utils import * 
+from models.SLAM3R.slam3r.datasets.wild_seq import Seq_Data
+from models.SLAM3R.slam3r.models import Image2PointsModel, Local2WorldModel, inf
+from models.SLAM3R.slam3r.utils.device import to_numpy
+from models.SLAM3R.slam3r.utils.recon_utils import * 
 
 parser = argparse.ArgumentParser(description="Inference on a wild captured scene")
 parser.add_argument("--device", type=str, default='cuda', help="pytorch device")

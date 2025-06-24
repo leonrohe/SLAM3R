@@ -6,10 +6,10 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import trimesh
 
-from slam3r.utils.device import to_numpy, collate_with_cat, to_cpu
-from slam3r.inference import loss_of_one_batch_multiview, \
+from models.SLAM3R.slam3r.utils.device import to_numpy, collate_with_cat, to_cpu
+from models.SLAM3R.slam3r.inference import loss_of_one_batch_multiview, \
                                 inv, get_multiview_scale
-from slam3r.utils.geometry import xy_grid
+from models.SLAM3R.slam3r.utils.geometry import xy_grid
 
 try:
     import poselib  # noqa

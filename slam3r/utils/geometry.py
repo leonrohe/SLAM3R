@@ -8,8 +8,8 @@ import torch
 import numpy as np
 from scipy.spatial import cKDTree as KDTree
 
-from slam3r.utils.misc import invalid_to_zeros, invalid_to_nans
-from slam3r.utils.device import to_numpy
+from models.SLAM3R.slam3r.utils.misc import invalid_to_zeros, invalid_to_nans
+from models.SLAM3R.slam3r.utils.device import to_numpy
 
 
 def xy_grid(W, H, device=None, origin=(0, 0), unsqueeze=None, cat_dim=-1, homogeneous=False, **arange_kw):

@@ -10,7 +10,7 @@ import torch
 SLAM3R_DIR = osp.dirname(osp.dirname(osp.dirname(osp.abspath(__file__))))
 import sys # noqa: E402
 sys.path.insert(0, SLAM3R_DIR) # noqa: E402
-from slam3r.utils.image import load_images
+from models.SLAM3R.slam3r.utils.image import load_images
 
 class Seq_Data():
     def __init__(self, 
