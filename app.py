@@ -38,8 +38,6 @@ def recon_scene_batched(scene:SLAM3RScene,
                         conf_thres_l2w, num_points_save):
     np.random.seed(42)
 
-    print("Batch IDX:", scene.batch_idx)
-
     dataset = Seq_Data(img_list, to_tensor=True)
     data_views = dataset[0][:] # copy the first group of views, in this case all images
 
@@ -53,7 +51,6 @@ def recon_scene_batched(scene:SLAM3RScene,
         if data_views[i]['img'].shape[0] == 1:
             data_views[i]['img'] = data_views[i]['img'][0]        
         rgb_imgs.append(transform_img(dict(img=data_views[i]['img'][None]))[...,::-1])
-    scene.per_frame_res['rgb_imgs'].extend(rgb_imgs)
 
     for view_id in data_views:
         view_id['img'] = torch.tensor(view_id['img'][None]) # add a batch dimension
@@ -542,9 +539,6 @@ def get_model_from_scene(per_frame_res, save_dir,
                          conf_thres_res=3, 
                          valid_masks=None
                         ):  
-    
-    for key in per_frame_res:
-        print(f"{key}: {len(per_frame_res[key])}")
 
     # collect the registered point clouds and rgb colors
     pcds = []
